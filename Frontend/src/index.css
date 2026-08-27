@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #FAFAF8;
+  --color-ink: #14181F;
+  --color-ink-soft: #5B6270;
+  --color-line: #E3E6EA;
+  --color-ledger: #0B6E4F;
+  --color-ledger-deep: #095939;
+  --color-error: #B3261E;
+
+  --font-display: "Newsreader", serif;
+  --font-sans: "Public Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
