@@ -163,7 +163,8 @@ async function createTransaction(req,res){
         await session.commitTransaction();
         session.endSession();
 
-        await emailService.sendTransactionEmail(req.user.email, req.user.name, amount, toAccount);
+        emailService.sendTransactionEmail(req.user.email, req.user.name, amount, toAccount)
+            .catch((err) => console.error("Failed to send transaction email:", err.message));
 
         return res.status(201).json({ message: "transaction completed successfully", transaction });
     } catch (error) {
