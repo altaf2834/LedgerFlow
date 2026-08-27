@@ -71,7 +71,11 @@ async function userLoginController(req,res){
         expiresIn:"3d"
     })
 
-    res.cookie("token",token)
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+    });
     res.status(200).json({
         message:"user logged in successfully",
         user:{
